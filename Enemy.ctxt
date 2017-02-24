@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Enemy
+comment0.text=\r\n\ Enemy\ class\ adds\ an\ imageCounter\ and\ an\ Enemy\ then\ scales\ the\ image\ for\ the\ Goomba.\r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
+comment1.params=
+comment1.target=Enemy()
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Enemy\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
+numComments=3
