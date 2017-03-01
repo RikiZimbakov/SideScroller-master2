@@ -6,19 +6,15 @@
  */
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
-     * Add platformCounter and score variables here. Also sets initial score to zero.
-     * @param There are no parameters
-     * @return Nothing is returned
-     */
 public class ScrollerWorld extends World
 {
     //Add platformCounter and score variables here
     private int platformCounter = 25;
-    private int Score = 0;
-    
-   /**
+    private int score = 0;
+
+    /**
      *Constructor for objects of class ScrollerWorld.
+     *Corrected score variable made it lower case.
      *Create a new world with 600x400 cells with a cell size of 1x1 pixels.
      *prepareWorld method which will add objects to world
      *display score will be called upon to show the score for amount of gumbas stomped on
@@ -29,14 +25,14 @@ public class ScrollerWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        
+
         //Method call to prepareWorld method which will add objects to world
         prepareWorld();
-        
+
         //when created, add method call to displayScore here
         displayScore();
     }
-    
+
     /**
      * prepareWorld adds objects to world to prepare the game for use
      * It also adds platforms at the bottom of the world for our mario character to walk on
@@ -49,13 +45,13 @@ public class ScrollerWorld extends World
         //Add for loop here to fill bottom of world with platforms
         for(int i = 0; i <= getWidth()/50; i++ )
         {
-           addObject(new Platform(), i*50, getHeight()- 8); 
+            addObject(new Platform(), i*50, getHeight()- 8); 
         }
-        
+
         //Add Hero object to the world
         addObject(new Hero(), 30, getHeight() - 30);
     }
-    
+
     /**
      * Add an act method here that will handle adding platforms to the right side
      * of the world so that the hero doesn't run out of platform to run on. This
@@ -64,7 +60,7 @@ public class ScrollerWorld extends World
      * @param There are no parameters
      * @return Nothing is returned
      */
-    
+
     public void act()
     {
         if( Greenfoot.isKeyDown("right") )
@@ -82,39 +78,42 @@ public class ScrollerWorld extends World
         }
         displayScore();
     }
-    
-    
-   /**
+
+    /**
      * GameOver method will display game over message and stop the scenario
+     * Added white spaces in between all code
      * @param There are no parameters
      * @return Nothing is returned
      */
     //Add gameOver method here that will display game over message and stop the scenario
     public void gameOver()
     {
-        showText("You Have been Defeated! Score:" + Score, getWidth()/2, getHeight()/2);
+        showText("You Have been Defeated! Score:" + score, getWidth()/2, getHeight()/2);
         Greenfoot.stop();
     }
-   /**
+
+    /**
      * DisplayScore method will display the score in the top left of the world
+     * corrected blank white line after showText line
      * @param There are no parameters
      * @return Nothing is returned
      */ 
     //Add displayScore method here that will display the score in the top left of the world
     private void displayScore()
     {
-        showText( "score: " + Score, 50, 25);
-        
+        showText( "score: " + score, 50, 25);
     }
+
     /**
      * addToScore method here that will increment the score variable
      * @param There are no parameters
      * @return Nothing is returned
      */
     //Add addToScore method here that will increment the score variable
+
     public void addToscore()
     {
-        Score ++;
-        displayScore();
+    score ++;
+    displayScore();
     }
 }
