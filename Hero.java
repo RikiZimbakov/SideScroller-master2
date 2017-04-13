@@ -55,7 +55,6 @@ public class Hero extends Actor
      */
     private void movement()
     {
-
         ScrollerWorld myWorld = (ScrollerWorld)getWorld();
         if( Greenfoot.isKeyDown("space") )
         {
@@ -120,8 +119,9 @@ public class Hero extends Actor
     }
 
     /**
-     * Hero class adds GreenfootImage variables for original image and jumping image. 
+     * fall lets Hero class add GreenfootImage variables for original image and jumping image. 
      * Also adds variables y, ySpeed, smallUp, up, cannotJump, and lookingRight
+     * 
      * @param There are no parameters
      * @return Nothing is returned
      */
@@ -133,27 +133,36 @@ public class Hero extends Actor
     }
 
     /**
-     * checkCollision method twill check if we've landed on the top
+     * --checkCollision method will check if we've landed on the top
      * of an Enemy, which will increase the score; touched an Enemy otherwise, which
-     * will have us lose the game; touched a platform which will allow us to jump again;
-     * or fall
+     * will have us decrease the health by 100; touched a platform which will allow us to jump again;
+     * or fall and also if the hero touches a mushroom increase its health by 
+     * 25
+     * 
      * @param There are no parameters
      * @return Nothing is returned
      */
     private void checkCollision()
     {
         ScrollerWorld myWorld = (ScrollerWorld)getWorld();
-
+        HealthBar bar = getWorld().getObjects(HealthBar.class).get(0);
         if( getOneObjectAtOffset(0, getImage().getHeight()-15, Enemy.class) != null)
         {
             getWorld().removeObject(getOneObjectAtOffset(0, getImage().getHeight()-15, Enemy.class) );
-            myWorld.addToscore();
+            myWorld.addToScore();
             y = smallUp;
             fall();
         }
         else if( isTouching(Enemy.class) )
         {
-            myWorld.gameOver();
+            getWorld().removeObject(getOneIntersectingObject(Enemy.class) );
+            bar.add(-100);
+        }
+
+        else if( isTouching(Mushroom.class) )
+        {
+            getWorld().removeObject(getOneIntersectingObject(Mushroom.class) );
+            bar.add(25);
         }
         else if( getOneObjectAtOffset(0, getImage().getHeight()-15, Platform.class) != null)
         {
@@ -169,7 +178,7 @@ public class Hero extends Actor
     }
 
     /**
-     * allows fireball to know direction of Hero and which way it is facing
+     * getRight allows fireball to know direction of Hero and which way it is facing
      * @param There are no parameters
      * @return Direction Hero is looking
      */

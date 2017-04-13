@@ -2,7 +2,7 @@
  * Name: (Risto Zimbakov)
  * Teacher: Mr. Hardman
  * Assignment #1, SideScroller
- * Date Last Modified: 
+ * Date Last Modified:4/13/2017 
  */
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
@@ -34,9 +34,11 @@ public class ScrollerWorld extends World
     }
 
     /**
-     * prepareWorld adds objects to world to prepare the game for use
+     * --prepareWorld adds objects to world to prepare the game for use
      * It also adds platforms at the bottom of the world for our mario character to walk on
      * we also add our Mario to the world here
+     * I also added a health bar to the world
+     * 
      * @param There are no parameters
      * @return Nothing is returned
      */
@@ -50,13 +52,16 @@ public class ScrollerWorld extends World
 
         //Add Hero object to the world
         addObject(new Hero(), 30, getHeight() - 30);
+        addObject(new HealthBar(), 275, getHeight() - 375);
     }
 
     /**
-     * Add an act method here that will handle adding platforms to the right side
+     * --act will handle adding platforms to the right side
      * of the world so that the hero doesn't run out of platform to run on. This
-     * method will also add Enemies to the world 0.67% of the time. The last thing
+     * method will also add Enemies to the world 0.67% of the time and mushrooms
+     * a random number of times as well but less then the enemy. The last thing
      * the act method will need is a method call to the displayScore method
+
      * @param There are no parameters
      * @return Nothing is returned
      */
@@ -72,15 +77,21 @@ public class ScrollerWorld extends World
             }
             platformCounter++;
         }
+
         if( Greenfoot.getRandomNumber(150) < 1 )
         {
             addObject(new Enemy(), 599, getHeight()- 27);
+        }
+
+        if( Greenfoot.getRandomNumber(500) < 1 )
+        {
+            addObject(new Mushroom(), 599, getHeight()- 125);
         }
         displayScore();
     }
 
     /**
-     * GameOver method will display game over message and stop the scenario
+     * gameOver method will display game over message and stop the scenario
      * Added white spaces in between all code
      * @param There are no parameters
      * @return Nothing is returned
@@ -93,7 +104,7 @@ public class ScrollerWorld extends World
     }
 
     /**
-     * DisplayScore method will display the score in the top left of the world
+     * displayScore method will display the score in the top left of the world
      * corrected blank white line after showText line
      * @param There are no parameters
      * @return Nothing is returned
@@ -111,9 +122,23 @@ public class ScrollerWorld extends World
      */
     //Add addToScore method here that will increment the score variable
 
-    public void addToscore()
+    public void addToScore()
     {
-    score ++;
-    displayScore();
+        score ++;
+        displayScore();
+    }
+
+    /**
+     * --prepare adds to the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     * this includes the healthbar add a desired spot in the world
+     * 
+     * @param There are no parameters
+     * @return Nothing is returned
+     */
+    private void prepare()
+    {
+        HealthBar healthbar = new HealthBar();
+        addObject(healthbar,284,38);
     }
 }
