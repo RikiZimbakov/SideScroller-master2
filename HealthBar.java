@@ -89,26 +89,24 @@ public class HealthBar extends Actor
      */
     public void act() 
     {                  
-        if(current < target)
+        if(current <= target)
         {
-            current += speed;
-            if( current > target)
-            {
-                current = target;
-            }
+            current --;
         }
-        else
-        {
-            current -= speed;
-            if( current < target)
-            {
-                current = target;
-            }
-        }
+
         if( current <= 0)
         {
             ScrollerWorld myWorld = (ScrollerWorld)getWorld();
             myWorld.gameOver();
+        }
+
+        if( current <= 1000 )
+        {
+
+            if( Greenfoot.getRandomNumber(100) < 1 )
+            {
+                getWorld().addObject(new Trophy(), 599, 250);
+            }    
         }
         updateBar();
     }
@@ -170,7 +168,6 @@ public class HealthBar extends Actor
      */
     public void add(int change)
     {
-        target = target + change;
         if(target > max)
         {
             target = max;

@@ -1,7 +1,7 @@
 /**
  * Name: (Risto Zimbakov)
  * Teacher: Mr. Hardman
- * Assignment #1, SideScroller
+ * Assignment Final Geometry Dash
  * Date Last Modified:4/13/2017 
  */
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
@@ -10,7 +10,7 @@ public class ScrollerWorld extends World
 {
     //Add platformCounter and score variables here
     private int platformCounter = 25;
-    private int score = 0;
+    GreenfootSound soundFile = new GreenfootSound("trumpet .mp3");
 
     /**
      *Constructor for objects of class ScrollerWorld.
@@ -29,8 +29,6 @@ public class ScrollerWorld extends World
         //Method call to prepareWorld method which will add objects to world
         prepareWorld();
 
-        //when created, add method call to displayScore here
-        displayScore();
     }
 
     /**
@@ -58,7 +56,7 @@ public class ScrollerWorld extends World
     /**
      * --act will handle adding platforms to the right side
      * of the world so that the hero doesn't run out of platform to run on. This
-     * method will also add Enemies to the world 0.67% of the time and mushrooms
+     * method will also add Enemies to the world 0.67% of the time and trophy
      * a random number of times as well but less then the enemy. The last thing
      * the act method will need is a method call to the displayScore method
 
@@ -80,14 +78,9 @@ public class ScrollerWorld extends World
 
         if( Greenfoot.getRandomNumber(150) < 1 )
         {
-            addObject(new Enemy(), 599, getHeight()- 27);
+            addObject(new Spike(), 599, getHeight()- 27);
         }
 
-        if( Greenfoot.getRandomNumber(500) < 1 )
-        {
-            addObject(new Mushroom(), 599, getHeight()- 125);
-        }
-        displayScore();
     }
 
     /**
@@ -99,35 +92,17 @@ public class ScrollerWorld extends World
     //Add gameOver method here that will display game over message and stop the scenario
     public void gameOver()
     {
-        showText("You Have been Defeated! Score:" + score, getWidth()/2, getHeight()/2);
+        showText("You Have been Defeated! Risto Is Better",getWidth()/2, getHeight()/2);
         Greenfoot.stop();
     }
-
-    /**
-     * displayScore method will display the score in the top left of the world
-     * corrected blank white line after showText line
-     * @param There are no parameters
-     * @return Nothing is returned
-     */ 
-    //Add displayScore method here that will display the score in the top left of the world
-    private void displayScore()
+    
+    public void champion()
     {
-        showText( "score: " + score, 50, 25);
+        showText("Your Pretty Alright Buddy Guy!",getWidth()/2, getHeight()/2);
+        Greenfoot.stop();
+        soundFile.play();
     }
-
-    /**
-     * addToScore method here that will increment the score variable
-     * @param There are no parameters
-     * @return Nothing is returned
-     */
-    //Add addToScore method here that will increment the score variable
-
-    public void addToScore()
-    {
-        score ++;
-        displayScore();
-    }
-
+    
     /**
      * --prepare adds to the world for the start of the program.
      * That is: create the initial objects and add them to the world.

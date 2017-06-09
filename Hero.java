@@ -3,12 +3,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Hero extends Actor
 {
     //Add GreenfootImage variables for original image and jumping image here
-    private GreenfootImage original = new GreenfootImage( "Hero.png");
-    private GreenfootImage jumping = new GreenfootImage( "Hero_Jumping.png" );
+    private GreenfootImage original = new GreenfootImage( "Dashman.png");
+    
 
     //Add the following variables here: y, ySpeed, smallUp, up, cannotJump, and lookingRight
     private int y = 0;
-    private int reloadTime = 25;
     private int ySpeed = 1;
     private int smallUp = -6;
     private int up = -15;
@@ -25,7 +24,6 @@ public class Hero extends Actor
     public Hero()
     {
         original.scale(30, 30);
-        jumping.scale(32, 32);
         original.mirrorHorizontally();
         setImage(original);
     }
@@ -56,31 +54,13 @@ public class Hero extends Actor
     private void movement()
     {
         ScrollerWorld myWorld = (ScrollerWorld)getWorld();
-        if( Greenfoot.isKeyDown("space") )
-        {
-            if( reloadTime >= 25)
-            {
-                if( lookingRight == true)
-                {
-                    myWorld.addObject(new Fireball(this), getX() + 5, getY());
-                }
-                else
-                {
-                    myWorld.addObject(new Fireball(this), getX() - 5, getY());
-                }
-
-                reloadTime = 0;
-            }
-            reloadTime ++;
-        }
-
         if( Greenfoot.isKeyDown("right") )
         {
 
             if( lookingRight ==false)
             {
                 original.mirrorHorizontally();
-                jumping.mirrorHorizontally();
+                
             }
             lookingRight = true;
             setLocation(getX()+3,getY());
@@ -92,7 +72,7 @@ public class Hero extends Actor
             if( lookingRight ==true)
             {
                 original.mirrorHorizontally();
-                jumping.mirrorHorizontally();
+        
             }
 
             lookingRight = false;
@@ -104,7 +84,6 @@ public class Hero extends Actor
 
             if( cannotJump == false)
             {
-                setImage(jumping);
                 y = up;
                 fall();
             }
@@ -130,13 +109,14 @@ public class Hero extends Actor
         cannotJump = true;
         setLocation(getX(),getY()+y);
         y = y + ySpeed;
+        setRotation(getRotation() + 11);
     }
 
     /**
      * --checkCollision method will check if we've landed on the top
-     * of an Enemy, which will increase the score; touched an Enemy otherwise, which
+     * of an Spike, which will increase the score; touched an Spike otherwise, which
      * will have us decrease the health by 100; touched a platform which will allow us to jump again;
-     * or fall and also if the hero touches a mushroom increase its health by 
+     * or fall and also if the hero touches a Trophy increase its health by 
      * 25
      * 
      * @param There are no parameters
@@ -146,29 +126,22 @@ public class Hero extends Actor
     {
         ScrollerWorld myWorld = (ScrollerWorld)getWorld();
         HealthBar bar = getWorld().getObjects(HealthBar.class).get(0);
-        if( getOneObjectAtOffset(0, getImage().getHeight()-15, Enemy.class) != null)
+        if( isTouching(Spike.class) )
         {
-            getWorld().removeObject(getOneObjectAtOffset(0, getImage().getHeight()-15, Enemy.class) );
-            myWorld.addToScore();
-            y = smallUp;
-            fall();
-        }
-        else if( isTouching(Enemy.class) )
-        {
-            getWorld().removeObject(getOneIntersectingObject(Enemy.class) );
-            bar.add(-100);
+            ((ScrollerWorld)getWorld()).gameOver();
         }
 
-        else if( isTouching(Mushroom.class) )
+        else if( isTouching(Trophy.class) )
         {
-            getWorld().removeObject(getOneIntersectingObject(Mushroom.class) );
-            bar.add(25);
+            getWorld().removeObject(getOneIntersectingObject(Trophy.class) );
+            ((ScrollerWorld)getWorld()).champion();
         }
         else if( getOneObjectAtOffset(0, getImage().getHeight()-15, Platform.class) != null)
         {
             setImage(original);
             cannotJump = false;
             y = 0;
+            setRotation(0);
         }
         else
         {

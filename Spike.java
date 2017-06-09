@@ -1,14 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Enemy extends Actor
+public class Spike extends Actor
 {
     // Add imageCounter variable here
     private int imageCounter = 3;
 
-    // Add Enemy constructor here to scale the image for the Enemy
-    public Enemy()
+    // Add Spike constructor here to scale the image for the Spike
+    public Spike()
     {
-        getImage().scale(25, 25);
+        getImage().scale(50, 50);
+        
     }
 
     /**
@@ -22,15 +23,10 @@ public class Enemy extends Actor
     public void checkCollison()
     {
         ScrollerWorld myWorld = (ScrollerWorld)getWorld();
-        if( isTouching(Fireball.class) )
-        {
-            myWorld.addToScore();
-            getWorld().removeObject(getOneIntersectingObject(Fireball.class) );
-        }
     }
 
     /**
-     * act does what the Enemy wants to do. This method is called whenever
+     * act does what the Spike wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      * @param There are no parameters
      * @return Nothing is returned
@@ -40,10 +36,10 @@ public class Enemy extends Actor
         // Add code to have enemy move left here
         move(-2);
 
-        GreenfootImage Enemy = new GreenfootImage("Goomba.png");
+        GreenfootImage Spike = new GreenfootImage("spikes.png");
         if(imageCounter >= 3)
         {
-            Enemy.mirrorHorizontally();
+            Spike.mirrorHorizontally();
         }
         else
         {
