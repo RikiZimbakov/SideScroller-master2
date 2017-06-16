@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=GeometryDash
+comment1.params=
+comment1.target=GeometryDash()
+comment1.text=\r\n\ GeometryDash\ is\ public\ because\ it\ needs\ to\ be\ accessible\ by\r\n\ everything\ so\ we\ set\ it\ as\ public\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
+comment2.params=
+comment2.target=void\ prepareWorld()
+comment2.text=\r\n\ prepareWorld\ plays\ the\ geometry\ dash\ song\ and\ adds\ objects\ to\ world\ to\ prepare\ the\ game\ for\ use\r\n\ It\ also\ adds\ platforms\ at\ the\ bottom\ of\ the\ world\ for\ our\ mario\ character\ to\ walk\ on\r\n\ we\ also\ add\ our\ Mario\ to\ the\ world\ here.\ It\ also\ added\ a\ health\ bar\ to\ the\ world.\r\n\ The\ modifier\ is\ private\ because\ we\ only\ want\ to\ prepare\ the\ world\ in\ this\ class.\ \r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\r\n\ --act\ will\ handle\ adding\ platforms\ to\ the\ right\ side\r\n\ of\ the\ world\ so\ that\ the\ hero\ doesn't\ run\ out\ of\ platform\ to\ run\ on.\ This\r\n\ method\ will\ also\ add\ Spikes\ to\ the\ world\ sa\ random\ amount\ of\ times.\r\n\ Modifier\ is\ public\ because\ it\ needs\ to\ be\ accessed\ by\ world\ and\ other\ classes\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
+comment4.params=
+comment4.target=void\ gameOver()
+comment4.text=\r\n\ gameOver\ method\ will\ display\ game\ over\ message\ and\ stop\ the\ scenario\r\n\ Added\ white\ spaces\ in\ between\ all\ code\r\n\ Modifier\ is\ public\ because\ it\ is\ accessed\ by\ other\ classes\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
+comment5.params=
+comment5.target=void\ champion()
+comment5.text=\r\n\ champion\ displays\ a\ message\ when\ the\ player\ wins\ and\ stops\ the\ senerio\ while\r\n\ also\ playing\ the\ most\ satisfying\ music\ to\ the\ user\r\n\ Uses\ public\ modifier\ because\ accessed\ by\ other\ classes\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
+comment6.params=
+comment6.target=void\ prepare()
+comment6.text=\r\n\ prepare\ adds\ to\ the\ world\ for\ the\ start\ of\ the\ program.\r\n\ That\ is\:\ create\ the\ initial\ objects\ and\ add\ them\ to\ the\ world.\r\n\ this\ includes\ the\ healthbar\ add\ a\ desired\ spot\ in\ the\ world\r\n\ Modifier\ is\ private\ so\ only\ need\ to\ be\ accessed\ in\ this\ class.\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
+comment7.params=
+comment7.target=void\ stopped()
+comment7.text=\r\n\ stopped\ ends\ the\ song\ when\ you\ pause\ the\ program\ or\ die\ or\ win\r\n\ Public\ because\ accessed\ in\ multiple\ classes\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ nothing\ is\ returned\r\n
+numComments=8

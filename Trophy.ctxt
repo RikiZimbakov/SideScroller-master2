@@ -2,10 +2,11 @@
 comment0.target=Trophy
 comment1.params=
 comment1.target=Trophy()
+comment1.text=\r\n\ Trophy\ scales\ the\ image\ to\ the\ right\ size\ and\ is\ public\ because\ it\r\n\ needs\ to\ be\ accessed\ by\ other\ classes.\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
 comment2.params=
 comment2.target=void\ checkCollison()
-comment2.text=\r\n\ --checkCollison\ makes\ a\ reference\ to\ scroller\ world\ and\ also\r\n\ checks\ if\ it\ is\ touching\ fireball\ and\ if\ it\ is\ removes\ both\ the\ fireball\r\n\ and\ the\ Trophy\ as\ well\ because\ noone\ likes\ baked\ Trophys\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
+comment2.text=\r\n\ --checkCollison\ makes\ a\ reference\ to\ scroller\ world\ and\ also\r\n\ checks\ if\ it\ is\ touching\ fireball\ and\ if\ it\ is\ removes\ both\ the\ fireball\r\n\ and\ the\ Trophy\ as\ well\ because\ noone\ likes\ baked\ Trophys\r\n\ public\ because\ it\ \ needs\ to\ be\ accessed\ by\ other\ classes.\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
 comment3.params=
 comment3.target=void\ act()
-comment3.text=\r\n\ act\ does\ whatever\ the\ Enemy\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
+comment3.text=\r\n\ act\ does\ whatever\ the\ Enemy\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n\ public\ because\ it\ \ needs\ to\ be\ accessed\ by\ other\ classes.\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
 numComments=4

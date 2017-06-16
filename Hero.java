@@ -10,7 +10,7 @@ public class Hero extends Actor
     private int y = 0;
     private int ySpeed = 1;
     private int smallUp = -6;
-    private int up = -15;
+    private int up = -20;
     private boolean cannotJump = false;
     private boolean lookingRight = true;
 
@@ -53,7 +53,7 @@ public class Hero extends Actor
      */
     private void movement()
     {
-        ScrollerWorld myWorld = (ScrollerWorld)getWorld();
+        GeometryDash myWorld = (GeometryDash)getWorld();
         if( Greenfoot.isKeyDown("right") )
         {
 
@@ -124,18 +124,32 @@ public class Hero extends Actor
      */
     private void checkCollision()
     {
-        ScrollerWorld myWorld = (ScrollerWorld)getWorld();
+        GeometryDash myWorld = (GeometryDash)getWorld();
         HealthBar bar = getWorld().getObjects(HealthBar.class).get(0);
-        if( isTouching(Spike.class) )
+        if( isTouching(Obstacle.class) )
         {
-            ((ScrollerWorld)getWorld()).gameOver();
+            ((GeometryDash)getWorld()).gameOver();
         }
 
         else if( isTouching(Trophy.class) )
         {
             getWorld().removeObject(getOneIntersectingObject(Trophy.class) );
-            ((ScrollerWorld)getWorld()).champion();
+            ((GeometryDash)getWorld()).champion();
         }
+        else if( isTouching(Block.class) )
+        {
+            if(getOneObjectAtOffset(1, 0, Block.class) != null)
+            {   
+                ((GeometryDash)getWorld()).gameOver();
+            }
+            else
+            {        
+                setImage(original);
+                cannotJump = false;
+                y = 0;
+                setRotation(0);
+            }
+        }          
         else if( getOneObjectAtOffset(0, getImage().getHeight()-15, Platform.class) != null)
         {
             setImage(original);

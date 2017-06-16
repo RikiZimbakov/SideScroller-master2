@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=TextBox
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ TextBox\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=message\ fs\ b\ fg\ bg
+comment1.target=TextBox(java.lang.String,\ int,\ boolean,\ java.awt.Color,\ java.awt.Color)
+comment2.params=message
+comment2.target=void\ setText(java.lang.String)
+comment2.text=\r\n\ setText\ sets\ img\ to\ a\ new\ greenfootImge\ so\ it\ allows\ the\ user\ to\ change\ \r\n\ the\ message\ of\ the\ Textbox,\ also\ makes\ sure\ we\ display\ the\ method\r\n\ by\ making\ a\ call\ to\ displayMethod.\r\n\ \r\n\ @param\ There\ is\ a\ string\ named\ message\ that\ allows\ TextBox\ to\ be\ set\ as\r\n\ a\ new\ string\ message\r\n\ @return\ Nothing\ is\ returned\r\n
+comment3.params=
+comment3.target=void\ displayMethod()
+comment3.text=\r\n\ displayMethod\ sets\ the\ image\ to\ img\ and\ also\ checks\ whether\ border\ is\ true\ \r\n\ and\ if\ this\ statement\ is\ true\ then\ it\ turns\ te\ color\ of\ img\ to\ black\ and\r\n\ draws\ a\ rectangle\ on\ top\ of\ img\ at\ the\ correct\ cordinates.\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
+comment4.params=
+comment4.target=void\ act()
+comment4.text=\r\n\ Act\ -\ do\ whatever\ the\ TextBox\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=5

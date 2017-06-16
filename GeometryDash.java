@@ -6,22 +6,20 @@
  */
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class ScrollerWorld extends World
+public class GeometryDash extends World
 {
-    //Add platformCounter and score variables here
+    //leave all as private because only need to access this class.
     private int platformCounter = 25;
-    GreenfootSound soundFile = new GreenfootSound("trumpet .mp3");
-
+    private GreenfootSound winningSound = new GreenfootSound("trumpet .mp3");
+    private GreenfootSound gameSound = new GreenfootSound("StereoMadness .mp3");
     /**
-     *Constructor for objects of class ScrollerWorld.
-     *Corrected score variable made it lower case.
-     *Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-     *prepareWorld method which will add objects to world
-     *display score will be called upon to show the score for amount of gumbas stomped on
+     * GeometryDash is public because it needs to be accessible by
+     * everything so we set it as public
+     * 
      * @param There are no parameters
      * @return Nothing is returned
      */
-    public ScrollerWorld()
+    public GeometryDash()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
@@ -32,16 +30,17 @@ public class ScrollerWorld extends World
     }
 
     /**
-     * --prepareWorld adds objects to world to prepare the game for use
+     * prepareWorld plays the geometry dash song and adds objects to world to prepare the game for use
      * It also adds platforms at the bottom of the world for our mario character to walk on
-     * we also add our Mario to the world here
-     * I also added a health bar to the world
+     * we also add our Mario to the world here. It also added a health bar to the world.
+     * The modifier is private because we only want to prepare the world in this class. 
      * 
      * @param There are no parameters
      * @return Nothing is returned
      */
     private void prepareWorld()
     {
+        gameSound.playLoop();
         //Add for loop here to fill bottom of world with platforms
         for(int i = 0; i <= getWidth()/50; i++ )
         {
@@ -56,16 +55,17 @@ public class ScrollerWorld extends World
     /**
      * --act will handle adding platforms to the right side
      * of the world so that the hero doesn't run out of platform to run on. This
-     * method will also add Enemies to the world 0.67% of the time and trophy
-     * a random number of times as well but less then the enemy. The last thing
-     * the act method will need is a method call to the displayScore method
-
+     * method will also add Spikes to the world sa random amount of times.
+     * Modifier is public because it needs to be accessed by world and other classes
+     * 
      * @param There are no parameters
      * @return Nothing is returned
      */
 
     public void act()
-    {
+    {        
+        //did not use modifier here becuase only need to use variable in this method
+        int obstacleType = Greenfoot.getRandomNumber(400);
         if( Greenfoot.isKeyDown("right") )
         {
             if( platformCounter >= 25 )
@@ -76,9 +76,28 @@ public class ScrollerWorld extends World
             platformCounter++;
         }
 
-        if( Greenfoot.getRandomNumber(150) < 1 )
+        if( obstacleType < 4 )
         {
-            addObject(new Spike(), 599, getHeight()- 27);
+
+            if( obstacleType == 0)
+            {
+                addObject(new OneSpike(), 599, getHeight()- 28);
+            }
+
+            if( obstacleType == 1)
+            {
+                addObject(new TwoSpikes(), 599, getHeight()- 30);
+            }
+
+            if( obstacleType == 2)
+            {
+                addObject(new ThreesSpike(), 599, getHeight()- 34);
+            }
+
+            if( obstacleType == 3)
+            {
+                addObject(new Block(), 599, getHeight()- 34);
+            }
         }
 
     }
@@ -86,6 +105,8 @@ public class ScrollerWorld extends World
     /**
      * gameOver method will display game over message and stop the scenario
      * Added white spaces in between all code
+     * Modifier is public because it is accessed by other classes
+     * 
      * @param There are no parameters
      * @return Nothing is returned
      */
@@ -93,20 +114,30 @@ public class ScrollerWorld extends World
     public void gameOver()
     {
         showText("You Have been Defeated! Risto Is Better",getWidth()/2, getHeight()/2);
-        Greenfoot.stop();
+        stopped();
+        Greenfoot.stop();       
     }
-    
+
+    /**
+     * champion displays a message when the player wins and stops the senerio while
+     * also playing the most satisfying music to the user
+     * Uses public modifier because accessed by other classes
+     * 
+     * @param There are no parameters
+     * @return Nothing is returned
+     */
     public void champion()
     {
         showText("Your Pretty Alright Buddy Guy!",getWidth()/2, getHeight()/2);
-        Greenfoot.stop();
-        soundFile.play();
+        winningSound.play();
+        Greenfoot.stop();        
     }
-    
+
     /**
-     * --prepare adds to the world for the start of the program.
+     * prepare adds to the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      * this includes the healthbar add a desired spot in the world
+     * Modifier is private so only need to be accessed in this class.
      * 
      * @param There are no parameters
      * @return Nothing is returned
@@ -115,5 +146,17 @@ public class ScrollerWorld extends World
     {
         HealthBar healthbar = new HealthBar();
         addObject(healthbar,284,38);
+    }
+
+    /**
+     * stopped ends the song when you pause the program or die or win
+     * Public because accessed in multiple classes
+     * 
+     * @param There are no parameters
+     * @return nothing is returned
+     */
+    public void stopped()
+    {
+        gameSound.stop();
     }
 }

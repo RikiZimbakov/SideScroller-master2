@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=UIMainWorld
+comment0.text=\r\n\ Name\:\ (Risto\ Zimbakov)\r\n\ Teacher\:\ Mr.\ Hardman\r\n\ Assignment\:\ Final\ Assignment\ Geometry\ Dash\r\n\ Date\ Last\ Modified\:\ 6/17/2017\r\n
+comment1.params=
+comment1.target=UIMainWorld()
+comment1.text=\r\n\ UIMainWorld\ sets\ the\ world\ to\ the\ appropriate\ size\ and\ also\ \r\n\ makes\ the\ world\ run\ so\ the\ user\ does\ not\ have\ to\ click\ run\ \r\n\ everytime\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
+comment2.params=
+comment2.target=void\ testActors()
+comment2.text=\r\n\ testActors\ adds\ a\ button,\ label,\ textbox,\ and\ Menu\ to\ world\ location\ of\ the\ \r\n\ users\ choosing.\ We\ only\ need\ to\ access\ this\ method\ inside\ this\ class\ there\r\n\ for\ it\ is\ private\r\n\ \r\n\ @param\ There\ are\ no\ Parameters\r\n\ @return\ Nothing\ is\ returned\r\n
+numComments=3

@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=Label
+comment1.params=value\ fontSize
+comment1.target=Label(java.lang.String,\ int)
+comment1.text=\r\n\ Label\ will\ intiate\ the\ va\r\n
+comment2.params=v\ fontSize
+comment2.target=Label(int,\ int)
+comment3.params=newValue
+comment3.target=void\ setValue(java.lang.String)
+comment3.text=\r\n\ setValue\ sets\ value\ to\ a\ new\ string\ and\ updates\ the\ image\ as\ well\r\n\ \r\n\ @param\ There\ is\ a\ string\ named\ newValue\ that\ allows\ value\ to\ be\ set\ as\r\n\ a\ new\ string\r\n\ @return\ Nothing\ is\ returned\r\n
+comment4.params=v
+comment4.target=void\ setValue(int)
+comment4.text=\r\n\ setValue\ sets\ value\ to\ a\ new\ integer\ and\ updates\ the\ image\ as\ well\r\n\ \r\n\ @param\ There\ is\ a\ integer\ named\ v\ that\ allows\ value\ to\ be\ set\ as\r\n\ a\ new\ integer\r\n\ @return\ Nothing\ is\ returned\r\n
+comment5.params=l
+comment5.target=void\ setLineColor(java.awt.Color)
+comment5.text=\r\n\ setLineColor\ sets\ lineColor\ to\ a\ new\ color\ and\ updates\ the\ image\ as\ well\r\n\ \r\n\ @param\ There\ is\ a\ color\ named\ l\ that\ allows\ lineColor\ to\ be\ set\ as\r\n\ a\ new\ color\r\n\ @return\ Nothing\ is\ returned\r\n
+comment6.params=f
+comment6.target=void\ setFillColor(java.awt.Color)
+comment6.text=\r\n\ setFillColor\ sets\ fillColor\ to\ a\ new\ color\ and\ updates\ the\ image\ as\ well\r\n\ \r\n\ @param\ There\ is\ a\ color\ named\ f\ that\ allows\ fillColor\ to\ be\ set\ as\r\n\ a\ new\ color\r\n\ @return\ Nothing\ is\ returned\r\n
+comment7.params=
+comment7.target=void\ updateImage()
+comment7.text=\r\n\ updateImage\ sets\ the\ image\ to\ a\ new\ greenfootimage\ with\ all\ of\ the\ updated\ \r\n\ values,\ fontsizes,\ and\ colors\ the\ user\ desires.\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
+comment8.params=
+comment8.target=void\ act()
+comment8.text=\r\n\ Act\ -\ do\ whatever\ the\ Label\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=9

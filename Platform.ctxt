@@ -2,7 +2,8 @@
 comment0.target=Platform
 comment1.params=
 comment1.target=Platform()
+comment1.text=\r\n\ Platform\ scales\ the\ image\ to\ the\ right\ size\ and\ is\ public\ because\ it\r\n\ needs\ to\ be\ accessed\ by\ other\ classes.\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Platform\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\ \r\n\ Also\ remove\ platforms\ if\ it's\ x\ coordinate\ is\ <\ 0.\r\n
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Platform\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\ \r\n\ Also\ remove\ platforms\ if\ it's\ x\ coordinate\ is\ <\ 0.\r\n\ public\ because\ it\ \ needs\ to\ be\ accessed\ by\ other\ classes.\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @ret\r\n
 numComments=3

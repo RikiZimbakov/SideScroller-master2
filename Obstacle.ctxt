@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Obstacle
+comment1.params=
+comment1.target=void\ checkCollison()
+comment1.text=\r\n\ checkCollison\ will\ get\ a\ reference\ to\ scrollerWorld\ \ \r\n\ public\ because\ it\ needs\ to\ be\ accessed\ by\ other\ classes.\ \r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ act\ does\ what\ the\ Obstacle\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n\ public\ because\ it\ \ needs\ to\ be\ accessed\ by\ other\ classes.\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
+numComments=3

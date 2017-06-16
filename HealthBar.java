@@ -3,6 +3,7 @@ import java.awt.*;
 
 public class HealthBar extends Actor
 {
+    // private because it only needs to be accessed in this class
     private GreenfootImage frame;
     private GreenfootImage healthBar;
 
@@ -18,6 +19,13 @@ public class HealthBar extends Actor
     private double ratio;
     private int healthWidth;
 
+    /**
+     * HealthBar sets up the bar correctly with all the correct values and is
+     * public because it needs to be accessed by other classes.
+     * 
+     * @param There are no parameters
+     * @return Nothing is returned
+     */
     public HealthBar()
     {
         frame = new GreenfootImage(200,30);
@@ -31,13 +39,23 @@ public class HealthBar extends Actor
         good = Color.GREEN;
         warning = Color.YELLOW;
         danger = Color.RED;
-        max = 1000;
-        current = 1000;
+        max = 5000;
+        current = 5000;
         target = current;
         speed = 1;
         updateBar();
     }
-
+    
+     /**
+     * HealthBar sets up the bar correctly with all the correct values and is
+     * public because it needs to be accessed by other classes.
+     * 
+     * @param There are three parameters that are used to pass a value to 
+     * the three variables of current max and speed to change them to
+     * whatever is desired
+     * 
+     * @return Nothing is returned
+     */
     public HealthBar( int c, int m, int s)
     {
         frame = new GreenfootImage(200,30);
@@ -57,7 +75,15 @@ public class HealthBar extends Actor
         speed = s;
         updateBar();
     }
-
+    /**
+     * HealthBar sets up the bar correctly with all the correct values and is
+     * public because it needs to be accessed by other classes.
+     * 
+     * @param There are three parameters that are used to pass a value to 
+     * the three colors and the three variables of current max and speed to change them to
+     * whatever is desired      
+     * @return Nothing is returned
+     */
     public HealthBar( int c, int m, int s, Color g, Color w, Color d)
     {
         frame = new GreenfootImage(200,30);
@@ -82,7 +108,8 @@ public class HealthBar extends Actor
      * act will check if the current score is less then your desired score
      * add the appropriate amount to your health bar and vice versa 
      * It also makes a call to update bar so it updates the health bar every single
-     * time a button is pressed
+     * time a button is pressed public because it needs to be accessed by other classes.
+     * public because it needs to be accessed by other classes.
      * 
      * @param There are no parameters
      * @return Nothing is returned
@@ -96,14 +123,14 @@ public class HealthBar extends Actor
 
         if( current <= 0)
         {
-            ScrollerWorld myWorld = (ScrollerWorld)getWorld();
+            GeometryDash myWorld = (GeometryDash)getWorld();
             myWorld.gameOver();
         }
 
         if( current <= 1000 )
         {
 
-            if( Greenfoot.getRandomNumber(100) < 1 )
+            if( Greenfoot.getRandomNumber(500) < 1 )
             {
                 getWorld().addObject(new Trophy(), 599, 250);
             }    
@@ -117,6 +144,7 @@ public class HealthBar extends Actor
      * greater then one fourth it will remain yellow and anything less then that
      * and the health bar will turn the color red. It also resets the color each time
      * and sets the font to time new roman. It also adds the score accordingly.
+     * Modifier is private becuase it only needs to be accessed in this class.
      * 
      * @param There are no parameters
      * @return Nothing is returned
@@ -161,6 +189,7 @@ public class HealthBar extends Actor
      * add will make sure that your health bar never reads lower then zero or 
      * higher then your max and also makes sure to add the change of your target
      * score accordingly
+     * public because it needs to be accessed by other classes.
      * 
      * @param an integer is returned that is responsible for changing your target 
      * score each time
@@ -180,6 +209,7 @@ public class HealthBar extends Actor
 
     /**
      * setTarget equads target to be equal to an integer t
+     * public because it needs to be accessed by other classes.
      * 
      * @param an integer t that gives the user the potential to change the 
      * target value to whatever is desired
@@ -192,6 +222,7 @@ public class HealthBar extends Actor
 
     /**
      * setCurrent equads current to be equal to an integer c
+     * public because it needs to be accessed by other classes.
      * 
      * @param an integer c that gives the user the potential to change the 
      * current value to whatever is desired
@@ -204,6 +235,7 @@ public class HealthBar extends Actor
 
     /**
      * setMax equads target to be equal to an integer m
+     * public because it needs to be accessed by other classes.
      * 
      * @param an integer m that gives the user the potential to change the 
      * target m to whatever is desired
@@ -216,6 +248,7 @@ public class HealthBar extends Actor
 
     /**
      * setSpeed equads target to be equal to an integer s
+     * public because it needs to be accessed by other classes.
      * 
      * @param an integer s that gives the user the potential to change the 
      * speed value to whatever is desired
@@ -228,6 +261,7 @@ public class HealthBar extends Actor
 
     /**
      * getMax returns the value of the maximum
+     * public because it needs to be accessed by other classes.
      * 
      * @param There are no parameters
      * @return an integer max is returned
@@ -239,6 +273,7 @@ public class HealthBar extends Actor
 
     /**
      * getCurrent returns the value of the current
+     * public because it needs to be accessed by other classes.
      * 
      * @param There are no parameters
      * @return an integer currrent is returned

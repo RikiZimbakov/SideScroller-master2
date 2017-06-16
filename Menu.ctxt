@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Menu
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Menu\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=tb\ items\ fs\ fgMain\ bgMain\ fgSecond\ bgSecond\ mc
+comment1.target=Menu(java.lang.String,\ java.lang.String,\ int,\ java.awt.Color,\ java.awt.Color,\ java.awt.Color,\ java.awt.Color,\ MenuCommands)
+comment2.params=
+comment2.target=Menu()
+comment3.params=w
+comment3.target=void\ addedToWorld(greenfoot.World)
+comment3.text=\r\n\ addedToWorld\ adds\ the\ titleBar\ object\ to\ World\ and\ sets\ the\ image\ of\ \r\n\ titleBar\ with\ the\ correct\ height.\r\n\ \r\n\ @param\ World\ w\ allows\ objects\ to\ be\ added\ to\ it\ from\ this\ class.\r\n\ \r\n\ @return\ Nothing\ is\ returned\r\n
+comment4.params=
+comment4.target=void\ handleMouse()
+comment4.text=\r\n\ HandleMouse\ checks\ whether\ the\ mouse\ was\ clicked\ on\ the\ title\ bar.\ \r\n\ If\ so,\ then\ checks\ whether\ visible\ is\ false.\ If\ visible\ is\ false,\ \r\n\ adds\ the\ menu\ items\ to\ the\ world.\ otherwise\ removes\ the\ menu\ objects\ from\ \r\n\ the\ world.\ Also\ checks\ whether\ mouse\ is\ clicked\ on\ the\ the\ menuItems\ and\ makes\r\n\ the\ appropriate\ actions.\r\n\ \r\n\ @param\ There\ are\ no\ Parameters\r\n\ \r\n\ @return\ Nothing\ is\ returned\r\n
+comment5.params=
+comment5.target=void\ act()
+comment5.text=\r\n\ Act\ -\ do\ whatever\ the\ Menu\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=6
