@@ -12,6 +12,7 @@ public class FileCommands implements MenuCommands
      * excute allows allows the user to click on any of the four buttons created
      * from Menu and through this a message will displayed depending on 
      * which button is pressed.
+     * modifier is public because it needs to be accessed by other classes.
      * 
      * @param There is a integer named idx that allows interface to run smoothly
      * with the World w. World w acts as reference.
@@ -43,13 +44,4 @@ public class FileCommands implements MenuCommands
             System.exit(1);
         }
     }
-
-    /**
-     * Act - do whatever the FileCommands wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
 }

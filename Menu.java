@@ -8,6 +8,7 @@ import java.awt.Color;
  */
 public class Menu extends Actor
 {
+    //private because only need to be accessed in this class
     private TextBox titleBar;
     private TextBox menuItems;
     private MenuCommands menuCommands;
@@ -20,6 +21,14 @@ public class Menu extends Actor
     private int titleHeight;
     private int menuHeight;
 
+    /**
+     * Menu sets integers, strings, colors and menuCommands to new values accordingly
+     * modifier is public because it needs to be accessed by other classes.
+     * 
+     * @param There are integers, strings, colors and menuCommands that set new values of corresponding
+     * partners.
+     * @return Nothing is returned.
+     */
     public Menu(String tb, String items, int fs, Color fgMain, Color bgMain, Color fgSecond, Color bgSecond, MenuCommands mc)
     {
         fontSize = fs;
@@ -33,6 +42,13 @@ public class Menu extends Actor
         menuItems = new TextBox(items, fontSize, true, secondFG, secondBG);
     }
 
+    /**
+     * Menu sets various attributes of menu including its colors
+     * modifier is public because it needs to be accessed by other classes.
+     * 
+     * @param There are no parameters
+     * @return Nothing is returned
+     */
     public Menu()
     {
         this("not initialized", "none", 24, Color.BLACK, Color.lightGray, Color.BLACK, Color.WHITE, null);
@@ -41,9 +57,9 @@ public class Menu extends Actor
     /**
      * addedToWorld adds the titleBar object to World and sets the image of 
      * titleBar with the correct height.
+     * modifier is public because it needs to be accessed by other classes.
      * 
      * @param World w allows objects to be added to it from this class.
-     * 
      * @return Nothing is returned
      */
     public void addedToWorld(World w)
@@ -59,9 +75,9 @@ public class Menu extends Actor
      * adds the menu items to the world. otherwise removes the menu objects from 
      * the world. Also checks whether mouse is clicked on the the menuItems and makes
      * the appropriate actions.
+     * modifier is public because it needs to be accessed by other classes.
      * 
      * @param There are no Parameters
-     * 
      * @return Nothing is returned
      */
     private void handleMouse()
@@ -95,8 +111,12 @@ public class Menu extends Actor
     }
 
     /**
-     * Act - do whatever the Menu wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * act does whatever the Menu wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment. It handles the mouse
+     * modifier is public because it needs to be accessed by other classes.
+     * 
+     * @param There are no parameters
+     * @return Nothing is returned.
      */
     public void act() 
     {

@@ -9,9 +9,16 @@ public class Label extends Actor
     private Color lineColor = Color.BLACK;
     private Color fillColor = Color.WHITE;
     private final Color TRANSPARENT = new Color(0,0,0,0);
-    
+
     /**
-     * Label will intiate the va
+     * Label will set the fontSize and the value of the label as well while
+     * also updating the image. Modifier is public because it needs to be
+     * accessed in more then one class
+     * 
+     * @param There are two parameters. A string named value that sets the
+     * value of the label and an integer named fontsize that sets the size
+     * of the label
+     * @return Nothing is returned
      */
     public Label(String value, int fontSize )
     {
@@ -20,6 +27,14 @@ public class Label extends Actor
         updateImage();
     }
 
+    /**
+     * Label Changes the integer v to a String value that will represent value 
+     * of Label. Modifier is public because it has to be accessed by other classes
+     * 
+     * @param There are two parameters one named v that will be changed to a string
+     * and fontSize that will initiate the size of label
+     * @return Nothing is returned
+     */
     public Label(int v, int fontSize)
     {
         this(Integer.toString(v), fontSize);
@@ -27,6 +42,7 @@ public class Label extends Actor
 
     /**
      * setValue sets value to a new string and updates the image as well
+     * Modifier is public because it has to be accessed by other classes
      * 
      * @param There is a string named newValue that allows value to be set as
      * a new string
@@ -40,6 +56,7 @@ public class Label extends Actor
 
     /**
      * setValue sets value to a new integer and updates the image as well
+     * Modifier is public because it has to be accessed by other classes
      * 
      * @param There is a integer named v that allows value to be set as
      * a new integer
@@ -53,6 +70,7 @@ public class Label extends Actor
 
     /**
      * setLineColor sets lineColor to a new color and updates the image as well
+     * Modifier is public because it has to be accessed by other classes
      * 
      * @param There is a color named l that allows lineColor to be set as
      * a new color
@@ -66,6 +84,7 @@ public class Label extends Actor
 
     /**
      * setFillColor sets fillColor to a new color and updates the image as well
+     * Modifier is public because it has to be accessed by other classes
      * 
      * @param There is a color named f that allows fillColor to be set as
      * a new color
@@ -80,6 +99,8 @@ public class Label extends Actor
     /**
      * updateImage sets the image to a new greenfootimage with all of the updated 
      * values, fontsizes, and colors the user desires.
+     * Modifier is private because it only needs to update the label in 
+     * this class
      * 
      * @param There are no parameters
      * @return Nothing is returned
@@ -87,14 +108,5 @@ public class Label extends Actor
     private void updateImage()
     {
         setImage( new GreenfootImage(value, fontSize, fillColor, TRANSPARENT, lineColor) );
-    }
-
-    /**
-     * Act - do whatever the Label wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+    } 
 }

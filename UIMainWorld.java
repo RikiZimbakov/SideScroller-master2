@@ -12,6 +12,7 @@ public class UIMainWorld extends World
      * UIMainWorld sets the world to the appropriate size and also 
      * makes the world run so the user does not have to click run 
      * everytime
+     * modifier is public because it needs to be accessed by other classes.
      * 
      * @param There are no parameters
      * @return Nothing is returned

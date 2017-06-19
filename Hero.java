@@ -2,9 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Hero extends Actor
 {
-    //Add GreenfootImage variables for original image and jumping image here
+    //private because only needs to be accessed in this class.
     private GreenfootImage original = new GreenfootImage( "Dashman.png");
-    
 
     //Add the following variables here: y, ySpeed, smallUp, up, cannotJump, and lookingRight
     private int y = 0;
@@ -18,6 +17,8 @@ public class Hero extends Actor
      * Create constructor to scale the original and jumping images, mirror the 
      * original image horizontally, and set the image of the hero to the original
      * variable
+     * modifier is public because it needs to be accessed by other classes.
+     * 
      * @param There are no parameters
      * @return Nothing is returned
      */
@@ -31,6 +32,8 @@ public class Hero extends Actor
     /**
      * Act - do whatever the Hero wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
+     * modifier is public because it needs to be accessed by other classes.
+     * 
      * @param There are no parameters
      * @return Nothing is returned
      */
@@ -48,6 +51,8 @@ public class Hero extends Actor
      * movement method that will handle the movement right, left, and up and mirror each respectively
      * also handles what happens when Space bar is pressed and allows hero to only shoot
      * certain amount of Fireballs for a given time
+     * Modifier is private because it only needs to display the Text in this 
+     * method
      * @param There are no parameters
      * @return Nothing is returned
      */
@@ -60,7 +65,7 @@ public class Hero extends Actor
             if( lookingRight ==false)
             {
                 original.mirrorHorizontally();
-                
+
             }
             lookingRight = true;
             setLocation(getX()+3,getY());
@@ -72,7 +77,7 @@ public class Hero extends Actor
             if( lookingRight ==true)
             {
                 original.mirrorHorizontally();
-        
+
             }
 
             lookingRight = false;
@@ -100,6 +105,8 @@ public class Hero extends Actor
     /**
      * fall lets Hero class add GreenfootImage variables for original image and jumping image. 
      * Also adds variables y, ySpeed, smallUp, up, cannotJump, and lookingRight
+     * Modifier is private because it only needs to display the Text in this 
+     * method
      * 
      * @param There are no parameters
      * @return Nothing is returned
@@ -118,6 +125,8 @@ public class Hero extends Actor
      * will have us decrease the health by 100; touched a platform which will allow us to jump again;
      * or fall and also if the hero touches a Trophy increase its health by 
      * 25
+     * Modifier is private because it only needs to display the Text in this 
+     * method
      * 
      * @param There are no parameters
      * @return Nothing is returned
@@ -166,6 +175,8 @@ public class Hero extends Actor
 
     /**
      * getRight allows fireball to know direction of Hero and which way it is facing
+     * modifier is public because it needs to be accessed by other classes.
+     * 
      * @param There are no parameters
      * @return Direction Hero is looking
      */

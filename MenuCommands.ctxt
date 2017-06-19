@@ -3,5 +3,5 @@ comment0.target=MenuCommands
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ MenuCommands\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=idx\ w
 comment1.target=void\ execute(int,\ greenfoot.World)
-comment1.text=\r\n\ excute\ allows\ the\ interface\ of\ the\ class\ to\ become\ more\ formal\ by\r\n\ making\ a\ contact\ between\ the\ class\ and\ the\ outside\ world.\ This\ is\ \r\n\ enforced\ by\ the\ build\ time\ of\ the\ compiler.\r\n\ \r\n\ @param\ There\ is\ a\ integer\ named\ idx\ that\ allows\ the\ interface\ to\ run\ smoothly\r\n\ with\ the\ World\ w.\ World\ w\ acts\ as\ a\ reference.\r\n\ \r\n\ @return\ Nothing\ is\ returned\r\n
+comment1.text=\r\n\ excute\ allows\ the\ interface\ of\ the\ class\ to\ become\ more\ formal\ by\r\n\ making\ a\ contact\ between\ the\ class\ and\ the\ outside\ world.\ This\ is\ \r\n\ enforced\ by\ the\ build\ time\ of\ the\ compiler.\r\n\ modifier\ is\ public\ because\ it\ needs\ to\ be\ accessed\ by\ other\ classes.\r\n\ \r\n\ @param\ There\ is\ a\ integer\ named\ idx\ that\ allows\ the\ interface\ to\ run\ smoothly\r\n\ with\ the\ World\ w.\ World\ w\ acts\ as\ a\ reference.\r\n\ \r\n\ @return\ Nothing\ is\ returned\r\n
 numComments=2

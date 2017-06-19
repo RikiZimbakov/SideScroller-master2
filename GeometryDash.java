@@ -128,7 +128,7 @@ public class GeometryDash extends World
      */
     public void champion()
     {
-        showText("Your Pretty Alright Buddy Guy!",getWidth()/2, getHeight()/2);
+        showText("You're Pretty Alright Buddy Guy!",getWidth()/2, getHeight()/2);
         winningSound.play();
         Greenfoot.stop();        
     }

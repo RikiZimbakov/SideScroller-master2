@@ -45,8 +45,8 @@ public class HealthBar extends Actor
         speed = 1;
         updateBar();
     }
-    
-     /**
+
+    /**
      * HealthBar sets up the bar correctly with all the correct values and is
      * public because it needs to be accessed by other classes.
      * 
@@ -75,6 +75,7 @@ public class HealthBar extends Actor
         speed = s;
         updateBar();
     }
+
     /**
      * HealthBar sets up the bar correctly with all the correct values and is
      * public because it needs to be accessed by other classes.

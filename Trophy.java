@@ -16,7 +16,7 @@ public class Trophy extends Actor
     {
         getImage().scale(50, 50);
     }
-    
+
     /**
      * --checkCollison makes a reference to scroller world and also
      * checks if it is touching fireball and if it is removes both the fireball

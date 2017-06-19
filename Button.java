@@ -8,12 +8,22 @@ import java.awt.*;
  */
 public class Button extends Actor
 {
+    //private as only need to be accessed in this class
     private int fontSize;
     private String firstImage;
     private String secondImage;
     GreenfootImage text1;
     GreenfootImage text2;
 
+    /**
+     * Button sets fontSize, firstImage, secondImage to new values and also sets the image
+     * of the button to look like its unpressed when the world starts.
+     * modifier is public because it needs to be accessed by other classes.
+     * 
+     * @param There are four parameters 1 integers and three strings that set new 
+     * values to fontSize, firstImage, secondImage.
+     * @return Nothing is returned.
+     */
     public Button(int fs, String f, String s, String t)
     {
         fontSize = fs;
@@ -28,6 +38,10 @@ public class Button extends Actor
 
     }
 
+    /**
+     * Button sets firstImage and secondImage to new values.
+     * modifier is public because it needs to be accessed by other classes.
+     */
     public Button(String f, String s)
     {
         firstImage = f;
@@ -36,8 +50,11 @@ public class Button extends Actor
     }
 
     /**
-     * Act - do whatever the Button wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * act makes a call to handleMouseClicks each time the program is run
+     * modifier is public because it needs to be accessed by other classes.
+     * 
+     * @param There are no parameters
+     * @return Nothing is returned
      */
     public void act() 
     {
@@ -48,6 +65,8 @@ public class Button extends Actor
      * handleMouseClicks checks whether mouse has been pressed on button and if so
      * changes the colour of the button to show ite been pressed and also after the user
      * releases the button the colour goes back to the original colour.
+     * Modifier is private because it only needs to display the Text in this 
+     * method
      * 
      * @param There are no parameters
      * @return Nothing is returned
@@ -69,6 +88,8 @@ public class Button extends Actor
 
     /**
      * clickedAction changes the uiMainWorld to a new world and also plays sound file.
+     * Modifier is private because it only needs to display the Text in this 
+     * method
      * 
      * @param There are no parameters
      * @return Nothing is returned
